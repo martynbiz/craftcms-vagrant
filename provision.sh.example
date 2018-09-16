@@ -27,7 +27,7 @@ sudo apt-get install -y mysql-server
 # ========================================
 # install php
 
-sudo apt-get install -y php libapache2-mod-php php-mcrypt php-mysql php-curl php-mbstring php-xml php-curl php-zip
+sudo apt-get install -y php libapache2-mod-php php-mcrypt php-mysql php-curl php-mbstring php-xml php-curl  php-zip zip unzip
 
 
 # ========================================
@@ -70,6 +70,6 @@ sudo mv composer.phar /usr/local/bin/composer
 # setup craftcms
 cd /var/www/craft
 composer create-project craftcms/craft craft-tmp
-mv craft-tmp/* .
-mv craft-tmp/.[!.]* .
+mv -n craft-tmp/* .
+mv -n craft-tmp/.[!.]* .
 rmdir craft-tmp/
